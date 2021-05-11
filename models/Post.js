@@ -1,9 +1,9 @@
-const { Model, DataTypes, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-Post.init (
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,9 +22,8 @@ Post.init (
         isURL: true
       }
     },
-    // foriegn key that references the user model 
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id'
@@ -37,6 +36,6 @@ Post.init (
     underscored: true,
     modelName: 'post'
   }
-)
+);
 
 module.exports = Post;
