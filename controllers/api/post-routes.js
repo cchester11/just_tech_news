@@ -100,7 +100,7 @@ router.put('/upvote', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  }
+    };
 });
 
 router.put('/:id', (req, res) => {
