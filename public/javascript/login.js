@@ -1,3 +1,5 @@
+const req = require("express/lib/request");
+
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -18,7 +20,8 @@ async function signupFormHandler(event) {
     // new version of .then method
     //response refers to the fetch statement const
     if (response.ok) {
-      console.log('success');
+      console.log('success')
+      document.location.replace('homepage');
     } else {
       alert(response.statusText)
     }
