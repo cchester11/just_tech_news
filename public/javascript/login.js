@@ -1,5 +1,3 @@
-const req = require("express/lib/request");
-
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -21,14 +19,12 @@ async function signupFormHandler(event) {
     //response refers to the fetch statement const
     if (response.ok) {
       console.log('success')
-      document.location.replace('homepage');
+      document.location.replace('/');
     } else {
       alert(response.statusText)
     }
   }
 }
-
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
 async function loginFormHandler (event) {
   event.preventDefault();
@@ -54,5 +50,7 @@ async function loginFormHandler (event) {
     }
   }
 }
+
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
